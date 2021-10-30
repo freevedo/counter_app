@@ -38,4 +38,4 @@ const Navbar = (props) => { //pass props as value and call it without this
 //     }
 // }
  
-// export default Navbar ;
+ export default Navbar ;
