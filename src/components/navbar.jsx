@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 //stateless functional component
-const Navbar = (props) => { //pass props as value and call it without this
+const Navbar = ({  totalCounter }) => { //pass props as value and call it without this
     return ( <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container-fluid">
       <a className="navbar-brand" href="#">Navbar</a>
@@ -22,7 +22,8 @@ const Navbar = (props) => { //pass props as value and call it without this
           <li className="nav-item">
             <a className="nav-link disabled">Disabled</a>
           </li>
-          <li className="nav-item"> <a className ="nav-link disabled">{props.totalCounter}</a> </li>
+          <li className="nav-item"> <a className ="nav-link disabled">{totalCounter}</a> </li> 
+          {/* object destructing makes code cleaner */}
         </ul>
       </div>
     </div>
