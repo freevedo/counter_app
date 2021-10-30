@@ -14,21 +14,22 @@ class Counter extends React.Component {
     //      this.setState({ value : this.state.value - 1});
     //  }
     render() { 
+        const { onIncrement , counter , onDecrement , onDelete} = this.props;
         return(
             <div>
                 <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
                 <button 
-                onClick={() => this.props.onIncrement(this.props.counter)} // now we pass as an error function the counter to modify his value
+                onClick={() => onIncrement(counter)} // now we pass as an error function the counter to modify his value
                 className="btn btn-secondary btn-sm" 
                 style= { { marginRight : "10px"}}>Increment</button>
                 <button
-                onClick={ () => this.props.onDecrement(this.props.counter)}
+                onClick={ () => onDecrement(counter)}
                 className= "btn btn-secondary btn-sm">Decrement</button>
                 {/* <ul>
                     {this.state.tags.map( tag => <li>{tag}</li>)} 
                 </ul> */}
                 {/* render lists */}
-                <button onClick={() => this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-2">Delete</button>
+                <button onClick={() => onDelete(counter.id)} className="btn btn-danger btn-sm m-2">Delete</button>
             </div>
         )
     }
